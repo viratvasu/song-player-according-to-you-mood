@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>User</title>
+    <script src="{% static 'jquery/jquery.min.js'%}" charset="utf-8"></script>
+    <script src="{% static 'bootstrap/popper.min.js'%}" charset="utf-8"></script>
+    <script src="{% static 'bootstrap/bootstrap.min.js'%}" charset="utf-8"></script>
+    <!-- <script src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script> -->
+    <link rel="stylesheet" href="{% static 'bootstrap/bootstrap.min.css'%}">
+    <link rel="stylesheet" href="{% static 'style.css'%}">
+    <style>
+      body{
+      	/* background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab); */
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
+        overflow-x: hidden;
+        }
+    </style>
+    {% block style %}
+    {% endblock %}
+  </head>
+  <body>
+    {% block content %}
+    {% endblock %}
+  </body>
+</html>

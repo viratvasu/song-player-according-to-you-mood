@@ -1,0 +1,40 @@
+#content {
+	padding: 15px;
+	transition: margin-left 0.7s;
+	overflow: hidden;
+	width: 100%;
+}
+.slide a {
+	color: #000;
+	font-size: 36px;
+	position:fixed;
+}
+.nav .close {
+	position: absolute;
+	top: 8px;
+	right: 22px;
+	margin-left: 50px;
+	font-size: 30px;
+	color: #ccc;
+}
+.nav {
+	height: 100%;
+	width: 0;
+	position: fixed;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	background-color: #282828;
+	overflow-x: hidden;
+	padding-top: 60px;
+	transition: 0.7s;
+}
+.nav ul li a{
+	display:block;
+	font-size: 30px;
+	text-decoration: none;
+	color: #ccc;
+}
+.nav ul li {
+	list-style: none;
+}
