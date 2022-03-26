@@ -42,9 +42,16 @@
            <li class="nav-item active">
              <a class="nav-link" href="{% url 'app:time'%}">Time</a>
            </li>
-           <li class="nav-item active">
-             <a class="nav-link" href="{% url 'app:weather' %}">Weather</a>
-           </li>
+           <li class="nav-item dropdown active">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              weather
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="/weather/Rain">Rain</a>
+              <a class="dropdown-item" href="/weather/Summer">Summer</a>
+              <a class="dropdown-item" href="/weather/Winter">Winter</a>
+            </div>
+          </li>
            <li class="nav-item dropdown active">
              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                Face expressions

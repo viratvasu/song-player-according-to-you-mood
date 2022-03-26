@@ -71,8 +71,15 @@
                 <li class="nav-item active">
                   <a class="nav-link" href="{% url 'app:time'%}">Time</a>
                 </li>
-                <li class="nav-item active">
-                  <a class="nav-link" href="{% url 'app:weather' %}">Weather</a>
+                <li class="nav-item dropdown active">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    weather
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="/weather/Rain">Rain</a>
+                    <a class="dropdown-item" href="/weather/Summer">Summer</a>
+                    <a class="dropdown-item" href="/weather/Winter">Winter</a>
+                  </div>
                 </li>
                 <li class="nav-item dropdown active">
                   <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -96,7 +103,7 @@
                     <a class="dropdown-item" href="/change_launguage/Tamil">Tamil</a>
                   </div>
                 </li>
-                <form class="form-inline my-2 my-lg-0" method="GET" action="{% url 'app:song_search' %}">
+                <form class="form-inline my-2 my-lg-0" method="POST" action="{% url 'app:song_search' %}">
                   {% csrf_token %}
                   <input class="form-control mr-sm-2" type="search" placeholder="Search For songs" aria-label="Search" name="theme">
                   <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
@@ -110,58 +117,6 @@
                <iframe src="{{link}}" frameborder="0" allow="autoplay; encrypted-media;" allowfullscreen></iframe>
              </div>
              {% endfor %}
-             <ul class="pagination" style="margin-top:50px;margin-left:40vw;">
-                {% if page_obj.has_previous %}
-                  <li class="page-item">
-                    <a class="page-link" href="?page={{ page_obj.previous_page_number }}" tabindex="-1"><< Previous</a>
-                  </li>
-                {% endif %}
-                  <li class="page-item active">
-                    <a class="page-link" href="#">Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }} <span class="sr-only">(current)</span></a>
-                  </li>
-                {% if page_obj.has_next %}
-                  <li class="page-item">
-                    <a class="page-link" href="?page={{ page_obj.next_page_number }}">Next >> </a>
-                  </li>
-                {% endif %}
-              </ul>
          </div>
-         <div class="modal" tabindex="-1" role="dialog" id="myModal">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="btn btn-success" style="position:relative;margin-left:150px;">Songs Info</h5>
-                </div>
-                <div class="modal-body">
-                  <!-- <p>Language:{{language}}</p>
-                  <p>Type:{{theme}}</p> -->
-                  <table class="table">
-                      <thead class="thead-dark">
-                        <tr>
-                          <th scope="col">Language</th>
-                          <th scope="col">Theme</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <th scope="row">{{language}}</th>
-                          <th scope="row">{{theme}}</th>
-                        </tr>
-                      </tbody>
-                    </table>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                </div>
-              </div>
-            </div>
-          </div>
       </header>
-      <script>
-          $(document).ready(function(){
-
-              $("#myModal").modal('show');
-
-          });
-      </script>
 {% endblock %}
