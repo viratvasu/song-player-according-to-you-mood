@@ -10,7 +10,7 @@ song_language="Telugu"
 
 def get_data(theme):
     # Now using youtube v3 apis
-    url = "https://www.googleapis.com/youtube/v3/search?maxResults=30&q={}&type=video&key=AIzaSyD8OlFQvf8f6dXuYRSCekWHy9x9gTJjDyU".format(theme+" songs in "+song_language)
+    url = "https://www.googleapis.com/youtube/v3/search?maxResults=30&q={}&type=video&key=".format(theme+" songs in "+song_language)
     response = requests.get(url)
     data=json.loads(response.text).get("items")
     video_ids=["https://www.youtube.com/embed/"+video_data.get("id").get("videoId") for video_data in data]
